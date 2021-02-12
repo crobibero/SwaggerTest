@@ -24,6 +24,12 @@ namespace SwaggerTest.Controllers
         {
             return Ok();
         }
+
+        [HttpGet("Enum")]
+        public ActionResult EnumTest([FromQuery] TestEnum t)
+        {
+            return Ok();
+        }
     }
 
     public class TestDto
@@ -32,5 +38,12 @@ namespace SwaggerTest.Controllers
         public int NonNullableInt { get; set; }
         public string? NullableString { get; set; }
         public string NonNullableString { get; set; }
+        public TestEnum TestEnum { get; set; }
+    }
+
+    public enum TestEnum
+    {
+        Item1 = 1,
+        Item2 = 2
     }
 }
